@@ -39,18 +39,9 @@ Tot i que els protocols d'encaminament dinàmic operen sobre IP, tècnicament fo
 
 Protocols principals de la capa de transport en TCP/IP:
 
-**TCP (Transmission Control Protocol - Protocol IP número 6)**
-- És un protocol de transport fiable i orientat a connexió.
-- Proporciona un flux ordenat de bytes, assegurant que les dades arribin completes i sense errors.
-- Implementa mecanismes de control per evitar sobrecàrregues en la xarxa.
-- És adequat per aplicacions on la integritat i l'ordre de les dades són essencials, com el correu electrònic (SMTP, IMAP, POP3), navegació web (HTTP/HTTPS) i transferències de fitxers (FTP).
-- La seva fiabilitat pot ser un inconvenient en aplicacions en temps real, com streaming o comunicacions de veu, on és preferible evitar retards causats per retransmissions.
+**TCP (Transmission Control Protocol):** Protocol de transport fiable i orientat a connexió que garanteix la correcta entrega i ordre de les dades. S’utilitza en aplicacions com web (HTTP/HTTPS), correu electrònic (SMTP, IMAP, POP3) i transferències de fitxers (FTP), però pot ser menys eficient en aplicacions en temps real.
 
-**UDP (User Datagram Protocol - Protocol IP número 17)**
-- És un protocol sense connexió i no fiable ("best effort"), ja que no garanteix que els paquets arribin ni que ho facin en ordre.
-- Té una baixa sobrecàrrega perquè no inclou mecanismes de correcció d'errors ni de retransmissió.
-- És ideal per aplicacions on la rapidesa és prioritària sobre la fiabilitat, com streaming de vídeo i àudio, jocs en línia i veu sobre IP (VoIP).
-- També s'utilitza en aplicacions de tipus petició/resposta, com el protocol DNS, on la fiabilitat no és crítica i la latència ha de ser mínima.
+**UDP (User Datagram Protocol):** Protocol sense connexió i no fiable, que prioritza la velocitat sobre la fiabilitat. S'utilitza en streaming de vídeo/àudio, jocs en línia, VoIP i DNS, on la latència baixa és més important que la correcció d'errors.
 
 **Ports TCP i UDP**
 Els protocols de transport permeten a les aplicacions distingir-se mitjançant l'ús de ports. Per convenció, alguns ports són ports ben coneguts (well-known ports), que estan reservats per a aplicacions específiques. Exemples:
