@@ -21,7 +21,7 @@ TCP/IP és el model en què es basa Internet i està format per **4 capes**, que
 L'arquitectura de TCP/IP està composta per quatre capes, cadascuna agrupant diferents protocols, i es correlaciona amb els nivells del model OSI de la següent manera:
 
 > [!NOTE]  
-> El model Open Systems Interconnect (OSI) és un estàndard de referència per a la interconnexió de sistemes oberts, desenvolupat per la Organització Internacional per a l’Estandardització (ISO) i introduït el 1984. Aquest model descriptiu de xarxes es divideix en set capes, cadascuna amb una funció específica. La seva creació va permetre establir un conjunt d'estàndards que van facilitar la compatibilitat i la interoperabilitat entre diferents tecnologies de xarxa desenvolupades per fabricants d’arreu del món.
+> El model **Open Systems Interconnect (OSI)** és un estàndard de referència per a la interconnexió de sistemes oberts, desenvolupat per la Organització Internacional per a l’Estandardització (ISO) i introduït el 1984. Aquest model descriptiu de xarxes es divideix en set capes, cadascuna amb una funció específica. La seva creació va permetre establir un conjunt d'estàndards que van facilitar la compatibilitat i la interoperabilitat entre diferents tecnologies de xarxa desenvolupades per fabricants d’arreu del món.
 
 ### **Nivell d'aplicació**
 
