@@ -11,6 +11,11 @@ El model **TCP/IP** (Transmission Control Protocol / Internet Protocol) és un c
 
 TCP/IP és el model en què es basa Internet i està format per **4 capes**, que s’encarreguen de diferents aspectes de la transmissió de dades.
 
+  <div style="text-align: center;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/UDP_encapsulation.svg/1600px-UDP_encapsulation.svg.png" alt="UDP encapsulation" width="421" height="auto"/>
+    <p><em>Figura 1: Encapsulació UDP. Font: Wikipedia</em></p>
+  </div>
+
 ## **Les 4 capes del model TCP/IP**
 
 ### **Capa d'Accés a la Xarxa (Network Access Layer)**
