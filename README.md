@@ -45,6 +45,7 @@ Tot i que els protocols d'encaminament dinàmic operen sobre IP, tècnicament fo
 > **UDP (User Datagram Protocol):** Protocol sense connexió i no fiable, que prioritza la velocitat sobre la fiabilitat. S'utilitza en streaming de vídeo/àudio, jocs en línia, VoIP i DNS, on la latència baixa és més important que la correcció d'errors.
 
 **Ports TCP i UDP**
+
 Els protocols de transport permeten a les aplicacions distingir-se mitjançant l'ús de ports. Per convenció, alguns ports són ports ben coneguts (well-known ports), que estan reservats per a aplicacions específiques. Exemples:
 - Port 80 (HTTP) i 443 (HTTPS) per navegació web.
 - Port 25 (SMTP) per enviament de correu electrònic.
