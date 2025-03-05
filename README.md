@@ -37,11 +37,12 @@ Aquest nivell es correspon amb la capa de transport del model OSI. Els protocols
 
 Tot i que els protocols d'encaminament dinàmic operen sobre IP, tècnicament formen part de TCP/IP, però solen ser considerats part de la capa de xarxa. Un exemple és OSPF (Open Shortest Path First, protocol IP número 89).
 
-Protocols principals de la capa de transport en TCP/IP:
-
-**TCP (Transmission Control Protocol):** Protocol de transport fiable i orientat a connexió que garanteix la correcta entrega i ordre de les dades. S’utilitza en aplicacions com web (HTTP/HTTPS), correu electrònic (SMTP, IMAP, POP3) i transferències de fitxers (FTP), però pot ser menys eficient en aplicacions en temps real.
-
-**UDP (User Datagram Protocol):** Protocol sense connexió i no fiable, que prioritza la velocitat sobre la fiabilitat. S'utilitza en streaming de vídeo/àudio, jocs en línia, VoIP i DNS, on la latència baixa és més important que la correcció d'errors.
+> [!IMPORTANT]  
+> Protocols principals de la capa de transport en TCP/IP:
+>
+> **TCP (Transmission Control Protocol):** Protocol de transport fiable i orientat a connexió que garanteix la correcta entrega i ordre de les dades. S’utilitza en aplicacions com web (HTTP/HTTPS), correu electrònic (SMTP, IMAP, POP3) i transferències de fitxers (FTP), però pot ser menys eficient en aplicacions en temps real.
+>
+> **UDP (User Datagram Protocol):** Protocol sense connexió i no fiable, que prioritza la velocitat sobre la fiabilitat. S'utilitza en streaming de vídeo/àudio, jocs en línia, VoIP i DNS, on la latència baixa és més important que la correcció d'errors.
 
 **Ports TCP i UDP**
 Els protocols de transport permeten a les aplicacions distingir-se mitjançant l'ús de ports. Per convenció, alguns ports són ports ben coneguts (well-known ports), que estan reservats per a aplicacions específiques. Exemples:
