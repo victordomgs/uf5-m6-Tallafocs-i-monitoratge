@@ -18,41 +18,76 @@ TCP/IP és el model en què es basa Internet i està format per **4 capes**, que
 
 ## **Les 4 capes del model TCP/IP**
 
-### **Capa d'Accés a la Xarxa (Network Access Layer)**
-- També coneguda com a **capa d'enllaç** o **capa física i d’enllaç de dades**.
-- S’encarrega de la transmissió física de dades entre dispositius.
-- Defineix com es transmeten els bits a través del medi físic (cables, Wi-Fi, fibra òptica, etc.).
-- Protocols associats: **Ethernet, Wi-Fi, ARP (Address Resolution Protocol)**.
+L'arquitectura de TCP/IP està composta per quatre capes, cadascuna agrupant diferents protocols, i es correlaciona amb els nivells del model OSI de la següent manera:
 
-📌 **Exemple:** Quan un ordinador envia un paquet de dades, aquesta capa s’encarrega de convertir la informació en senyals elèctriques, òptiques o de ràdio.
+> [!NOTE]  
+> El model Open Systems Interconnect (OSI) és un estàndard de referència per a la interconnexió de sistemes oberts, desenvolupat per la Organització Internacional per a l’Estandardització (ISO) i introduït el 1984. Aquest model descriptiu de xarxes es divideix en set capes, cadascuna amb una funció específica. La seva creació va permetre establir un conjunt d'estàndards que van facilitar la compatibilitat i la interoperabilitat entre diferents tecnologies de xarxa desenvolupades per fabricants d’arreu del món.
 
----
+### **Nivell d'aplicació**
 
-### **Capa d'Internet (Internet Layer)**
-- Gestiona l’adreçament i l’encaminament dels paquets de dades a través de la xarxa.
-- Defineix com es comuniquen els dispositius en una xarxa i en diferents xarxes interconnectades.
-- Protocols associats: **IP (Internet Protocol), ICMP (Internet Control Message Protocol), ARP**.
+Aquest nivell es correspon amb les capes **d'aplicació, presentació i sessió** del model OSI. La **capa d'aplicació** és aquella que els programes utilitzen per comunicar-se a través d'una xarxa amb altres aplicacions. Els processos en aquesta capa són específics de cada aplicació i passen dades en el format intern que utilitza el programa, les quals després es codifiquen seguint un protocol estàndard per garantir la interoperabilitat.
 
-📌 **Exemple:** Quan enviem un correu electrònic, aquesta capa s’encarrega de trobar el camí més eficient per fer arribar el missatge al destinatari.
+Algunes aplicacions específiques s’executen en aquest nivell, proporcionant serveis directament a les aplicacions d’usuari. Entre els protocols associats a aquesta capa es troben **HTTP (HyperText Transfer Protocol), FTP (File Transfer Protocol), SMTP (Simple Mail Transfer Protocol), SSH (Secure Shell) i DNS (Domain Name System), entre d'altres**.
 
----
+Un cop les dades de l'aplicació han estat codificades segons un protocol estàndard de la capa d’aplicació, es transfereixen cap avall a la següent capa de la pila de protocols TCP/IP per continuar el procés de transmissió.
 
-### **Capa de Transport (Transport Layer)**
-- Assegura que les dades es transmetin de manera fiable entre origen i destinació.
-- Controla el flux de dades, maneja errors i garanteix la correcta entrega dels paquets.
-- Protocols associats:
-  - **TCP (Transmission Control Protocol)**: Connexió fiable, garanteix l'ordre dels paquets i la seva entrega sense errors.
-  - **UDP (User Datagram Protocol)**: Connexió no fiable, envia paquets sense garantir la recepció.
+### **Nivell de transport**
 
-📌 **Exemple:** Quan visualitzem un vídeo en streaming, es pot utilitzar **UDP** per evitar retards, mentre que per descarregar un fitxer es fa servir **TCP** per assegurar-ne la integritat.
+Aquest nivell es correspon amb la capa de transport del model OSI. Els protocols d'aquesta capa s'encarreguen de gestionar la fiabilitat i la seguretat de la transmissió de dades, garantint que arribin al seu destí i ho facin en l'ordre correcte. En el model TCP/IP, els protocols de transport també tenen la funció de determinar a quina aplicació han de ser dirigides les dades.
 
----
+Tot i que els protocols d'encaminament dinàmic operen sobre IP, tècnicament formen part de TCP/IP, però solen ser considerats part de la capa de xarxa. Un exemple és OSPF (Open Shortest Path First, protocol IP número 89).
 
-### **Capa d'Aplicació (Application Layer)**
-- Proporciona serveis directament als usuaris i aplicacions.
-- Inclou els protocols que permeten la comunicació entre programes.
-- Protocols associats: **HTTP, HTTPS, FTP, SSH, DNS, SMTP, POP3, IMAP, Telnet**.
+Protocols principals de la capa de transport en TCP/IP:
 
-📌 **Exemple:** Quan accedim a una pàgina web, el navegador utilitza el protocol **HTTP/HTTPS** per sol·licitar i rebre la informació del servidor.
+**TCP (Transmission Control Protocol - Protocol IP número 6)**
+- És un protocol de transport fiable i orientat a connexió.
+- Proporciona un flux ordenat de bytes, assegurant que les dades arribin completes i sense errors.
+- Implementa mecanismes de control per evitar sobrecàrregues en la xarxa.
+- És adequat per aplicacions on la integritat i l'ordre de les dades són essencials, com el correu electrònic (SMTP, IMAP, POP3), navegació web (HTTP/HTTPS) i transferències de fitxers (FTP).
+- La seva fiabilitat pot ser un inconvenient en aplicacions en temps real, com streaming o comunicacions de veu, on és preferible evitar retards causats per retransmissions.
 
----
+**UDP (User Datagram Protocol - Protocol IP número 17)**
+- És un protocol sense connexió i no fiable ("best effort"), ja que no garanteix que els paquets arribin ni que ho facin en ordre.
+- Té una baixa sobrecàrrega perquè no inclou mecanismes de correcció d'errors ni de retransmissió.
+- És ideal per aplicacions on la rapidesa és prioritària sobre la fiabilitat, com streaming de vídeo i àudio, jocs en línia i veu sobre IP (VoIP).
+- També s'utilitza en aplicacions de tipus petició/resposta, com el protocol DNS, on la fiabilitat no és crítica i la latència ha de ser mínima.
+
+**Ports TCP i UDP**
+Els protocols de transport permeten a les aplicacions distingir-se mitjançant l'ús de ports. Per convenció, alguns ports són ports ben coneguts (well-known ports), que estan reservats per a aplicacions específiques. Exemples:
+- Port 80 (HTTP) i 443 (HTTPS) per navegació web.
+- Port 25 (SMTP) per enviament de correu electrònic.
+- Port 53 (DNS) per resolució de noms de domini.
+
+### **Nivell d'interxarxa**
+
+Aquest nivell es correspon amb la capa de xarxa del model OSI. Originalment, aquesta capa es va dissenyar per solucionar el problema del transport de paquets a través d'una xarxa senzilla. Alguns dels primers protocols associats a aquesta capa inclouen X.25 i el Host/IMP Protocol d'ARPANET.
+
+Amb l'aparició del concepte d'interxarxa, la funció de la capa de xarxa es va ampliar per permetre l'intercanvi de dades entre xarxes diferents. Això inclou l'encaminament de paquets a través d'una xarxa de xarxes, coneguda com Internet.
+
+Protocols principals de la capa de xarxa en TCP/IP:
+
+**IP (Internet Protocol)**
+
+- És el protocol fonamental per a la transmissió de dades en Internet.
+- Gestiona l'adreçament i l'encaminament dels paquets des d'un dispositiu origen fins a un dispositiu destí.
+- Funciona de manera no fiable i sense connexió, és a dir, no garanteix que els paquets arribin ni en ordre ni sense errors.
+- Els protocols superiors (com TCP o UDP) s'encarreguen de gestionar aquests aspectes si és necessari.
+- Existeixen dues versions principals: IPv4 (amb adreces de 32 bits) i IPv6 (amb adreces de 128 bits).
+
+**Protocols associats a IP**
+- ICMP (Internet Control Message Protocol, Protocol IP número 1): Utilitzat per enviar missatges de control i diagnòstic sobre transmissions IP. Exemples d'ús: ordres com ping i traceroute.
+- IGMP (Internet Group Management Protocol, Protocol IP número 2): Permet gestionar el trànsit multicast, facilitant la comunicació entre grups d’usuaris que reben el mateix flux de dades.
+
+**Protocols d'encaminament**
+
+A més dels protocols de transmissió de dades, a la capa de xarxa també trobem els **protocols d'encaminament**, que defineixen com els paquets troben el millor camí fins a la seva destinació:
+
+- **BGP (Border Gateway Protocol):** Utilitzat per a l'encaminament entre sistemes autònoms en Internet.
+- **OSPF (Open Shortest Path First):** Un protocol dinàmic d'encaminament per xarxes internes.
+- **RIP (Routing Information Protocol):** Un dels primers protocols d'encaminament dinàmic.
+
+Encara que alguns d'aquests protocols (com **ICMP i IGMP**) tècnicament es troben per sobre d'IP, les seves funcions són pròpies de la **capa de xarxa**, cosa que reflecteix una lleugera diferència entre el model TCP/IP i el model OSI.
+
+### **Nivell d'enllaç**
+
+La capa d'enllaç no forma part realment de la pila TCP/IP però és el mètode utilitzat per passar paquets de la capa Internet d'un dispositiu a la capa Internet d'un altre. Aquest procés pot ser controlat tant per programari com per maquinari (hardware). D'aquesta manera es realitzen funcions d'enllaç de dades tals com afegir una capçalera al paquet per preparar-lo per a la seva transmissió i enviar-lo posteriorment per un mitjà físic. D'altra banda, la capa d'enllaç s'encarrega de rebre trames de dades, extreure les capçaleres d'aquestes i entregar els paquets rebuts a la capa d'Internet.
