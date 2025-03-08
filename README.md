@@ -92,16 +92,11 @@ La capa d'enllaç no forma part realment de la pila TCP/IP però és el mètode 
 
 La **seguretat perimetral informàtica** consisteix a establir un conjunt de controls de seguretat al voltant d'una estructura tecnològica, amb l'objectiu de garantir la protecció adequada davant atacs o accessos procedents d'intrusos o xarxes no confiables.
 
-  <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/seguretat-perimetral.png" alt="Seguretat perimetral" width="630" height="auto"/>
-    <p><em>Figura 2: Seguretat perimetral. Font: Universitat Rey Juan Carlos</em></p>
-  </div>
-
 L'element més utilitzat per assegurar el perimetre és el **tallafoc** (firewall), que és un element de maquinari o programari utilitzat en una xarxa d'equips informàtics per controlar les comunicacions, permetent-les o prohibiunt-les segons les polítiques de xarxa que hagi definit l'organització responsable de la xarxa. 
 
   <div style="text-align: center;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Gateway_firewall.svg/1280px-Gateway_firewall.svg.png" alt="Firewall" width="630" height="auto"/>
-    <p><em>Figura 3: Tallafocs. Font: Wikipedia</em></p>
+    <p><em>Figura 2: Tallafocs. Font: Wikipedia</em></p>
   </div>
 
 La posició habitual d’un tallafoc és al punt de connexió entre la xarxa interna de l’organització i la xarxa externa, generalment Internet. Això permet protegir la xarxa interna d’intents d’accés no autoritzats des de l’exterior que podrien explotar vulnerabilitats dels sistemes interns.
