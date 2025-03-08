@@ -10,6 +10,7 @@
 [3. Seguretat perimetral](#3-seguretat-perimetral)
    - [3.1. Tipus de tallafocs](#31-tipus-de-tallafocs)
    - [3.2. Sistema de detecció d'intrusos](#32-sistema-de-detecció-dintrusos)
+   - [3.3. sistema de prevenció d'intrusos](#33-sistema-de-prevenció-dintrusos)
 
 ## **1. Introducció a TCP/IP**
 El model **TCP/IP** (Transmission Control Protocol / Internet Protocol) és un conjunt de protocols de comunicació que permeten la connexió i transmissió de dades entre dispositius en una xarxa, incloent Internet. Aquest model es basa en una arquitectura en capes, on cada capa té funcions específiques per garantir una comunicació eficient i fiable.
@@ -140,7 +141,7 @@ Existeixen dos tipus de sistemes de detecció d'intrusos:
 
 2. **NIDS (NetworkIDS):** un SDI basat en la xarxa, detectant atacs a tot el segment de la xarxa. La seva interfície ha de funcionar en manera promíscua capturant així tot el tràfic de la xarxa.
 
-### 3.3. El sistema de prevenció d'intrusos
+### 3.3. Sistema de prevenció d'intrusos
 
 Un **sistema de prevenció d'intrusions (o per les seves sigles en anglès, IPS)** és un programari que exerceix el control d'accés en una xarxa informàtica per protegir els sistemes computacionals d'atacs i abusos. La tecnologia de prevenció d'intrusions és considerada per alguns com una extensió dels sistemes de detecció d'intrusions (IDS), però en realitat és un altre tipus de control d'accés, més proper a les tecnologies de tallafocs.
 
