@@ -7,7 +7,7 @@
    - [Capa de Transport (Transport Layer)](#capa-de-transport-transport-layer)
    - [Capa d'Aplicació (Application Layer)](#capa-daplicació-application-layer)
 
-
+[3. Seguretat perimetral](#3-seguretat-perimetral)
 
 ## **1. Introducció a TCP/IP**
 El model **TCP/IP** (Transmission Control Protocol / Internet Protocol) és un conjunt de protocols de comunicació que permeten la connexió i transmissió de dades entre dispositius en una xarxa, incloent Internet. Aquest model es basa en una arquitectura en capes, on cada capa té funcions específiques per garantir una comunicació eficient i fiable.
@@ -87,3 +87,12 @@ Encara que alguns d'aquests protocols (com **ICMP i IGMP**) tècnicament es trob
 ### **Nivell d'enllaç**
 
 La capa d'enllaç no forma part realment de la pila TCP/IP però és el mètode utilitzat per passar paquets de la capa Internet d'un dispositiu a la capa Internet d'un altre. Aquest procés pot ser controlat tant per programari com per maquinari (hardware). D'aquesta manera es realitzen funcions d'enllaç de dades tals com afegir una capçalera al paquet per preparar-lo per a la seva transmissió i enviar-lo posteriorment per un mitjà físic. D'altra banda, la capa d'enllaç s'encarrega de rebre trames de dades, extreure les capçaleres d'aquestes i entregar els paquets rebuts a la capa d'Internet.
+
+## **3. Seguretat perimetral**
+
+La **seguretat perimetral informàtica** consisteix a establir un conjunt de controls de seguretat al voltant d'una estructura tecnològica, amb l'objectiu de garantir la protecció adequada davant atacs o accessos procedents d'intrusos o xarxes no confiables.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/seguretat-perimetral.png" alt="Seguretat perimetral" width="630" height="auto"/>
+    <p><em>Figura 2: Seguretat perimetral. Font: Universitat Rey Juan Carlos</em></p>
+  </div>
