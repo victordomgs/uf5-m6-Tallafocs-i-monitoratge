@@ -1,11 +1,13 @@
 ## **Índex**
-[1. Introducció a TCP/IP](#introducció-a-tcpip)
+[1. Introducció a TCP/IP](#1-introducció-a-tcpip)
 
-[2. Les 4 capes del model TCP/IP](#les-4-capes-del-model-tcpip)
+[2. Les 4 capes del model TCP/IP](#2-les-4-capes-del-model-tcpip)
    - [Capa d'Accés a la Xarxa (Network Access Layer)](#capa-daccés-a-la-xarxa-network-access-layer)
    - [Capa d'Internet (Internet Layer)](#capa-dinternet-internet-layer)
    - [Capa de Transport (Transport Layer)](#capa-de-transport-transport-layer)
    - [Capa d'Aplicació (Application Layer)](#capa-daplicació-application-layer)
+
+
 
 ## **1. Introducció a TCP/IP**
 El model **TCP/IP** (Transmission Control Protocol / Internet Protocol) és un conjunt de protocols de comunicació que permeten la connexió i transmissió de dades entre dispositius en una xarxa, incloent Internet. Aquest model es basa en una arquitectura en capes, on cada capa té funcions específiques per garantir una comunicació eficient i fiable.
