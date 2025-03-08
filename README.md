@@ -96,3 +96,23 @@ La **seguretat perimetral informàtica** consisteix a establir un conjunt de con
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/seguretat-perimetral.png" alt="Seguretat perimetral" width="630" height="auto"/>
     <p><em>Figura 2: Seguretat perimetral. Font: Universitat Rey Juan Carlos</em></p>
   </div>
+
+L'element més utilitzat per assegurar el perimetre és el **tallafoc** (firewall), que és un element de maquinari o programari utilitzat en una xarxa d'equips informàtics per controlar les comunicacions, permetent-les o prohibiunt-les segons les polítiques de xarxa que hagi definit l'organització responsable de la xarxa. 
+
+  <div style="text-align: center;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Gateway_firewall.svg/1280px-Gateway_firewall.svg.png" alt="Firewall" width="630" height="auto"/>
+    <p><em>Figura 3: Tallafocs. Font: Wikipedia</em></p>
+  </div>
+
+La posició habitual d’un tallafoc és al punt de connexió entre la xarxa interna de l’organització i la xarxa externa, generalment Internet. Això permet protegir la xarxa interna d’intents d’accés no autoritzats des de l’exterior que podrien explotar vulnerabilitats dels sistemes interns.
+
+A més, és comú que el tallafoc connecti una tercera xarxa anomenada zona desmilitaritzada (DMZ), on es situen els servidors de l’organització que han de ser accessibles des de l’exterior.
+
+Encara que un tallafoc ben configurat millora la seguretat d’una infraestructura informàtica, no és suficient per garantir una protecció completa. La seguretat informàtica abasta múltiples àmbits i nivells, requerint un enfocament integral per minimitzar riscos.
+
+
+
+
+
+
+
