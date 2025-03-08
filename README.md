@@ -1,5 +1,6 @@
 ## **Índex**
 [1. Introducció a TCP/IP](#introducció-a-tcpip)
+
 [2. Les 4 capes del model TCP/IP](#les-4-capes-del-model-tcpip)
    - [Capa d'Accés a la Xarxa (Network Access Layer)](#capa-daccés-a-la-xarxa-network-access-layer)
    - [Capa d'Internet (Internet Layer)](#capa-dinternet-internet-layer)
