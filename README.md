@@ -106,7 +106,7 @@ La posició habitual d’un tallafoc és al punt de connexió entre la xarxa int
 
 A més, és comú que el tallafoc connecti una tercera xarxa anomenada **zona desmilitaritzada (DMZ)**, on es situen els servidors de l’organització que han de ser accessibles des de l’exterior.
 
-Encara que un tallafoc ben configurat millora la seguretat d’una infraestructura informàtica, no és suficient per garantir una protecció completa. La seguretat informàtica abasta múltiples àmbits i nivells, requerint un enfocament integral per minimitzar riscos.
+Encara que un tallafoc ben configurat millora la seguretat d’una infraestructura informàtica, no és suficient per garantir una protecció completa.
 
 ### 3.1. Tipus de tallafocs
 
