@@ -95,7 +95,7 @@ La capa d'enllaç no forma part realment de la pila TCP/IP però és el mètode 
 
 La **seguretat perimetral informàtica** consisteix a establir un conjunt de controls de seguretat al voltant d'una estructura tecnològica, amb l'objectiu de garantir la protecció adequada davant atacs o accessos procedents d'intrusos o xarxes no confiables.
 
-L'element més utilitzat per assegurar el perimetre és el **tallafoc** (firewall), que és un element de maquinari o programari utilitzat en una xarxa d'equips informàtics per controlar les comunicacions, permetent-les o prohibiunt-les segons les polítiques de xarxa que hagi definit l'organització responsable de la xarxa. 
+L'element més utilitzat per assegurar el perimetre és el **tallafoc** (firewall), que és un element de maquinari o programari utilitzat en una xarxa d'equips informàtics per controlar les comunicacions, permetent-les o prohibint-les segons les polítiques de xarxa que hagi definit l'organització responsable de la xarxa. 
 
   <div style="text-align: center;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Gateway_firewall.svg/1280px-Gateway_firewall.svg.png" alt="Firewall" width="630" height="auto"/>
