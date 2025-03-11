@@ -19,7 +19,7 @@ TCP/IP és el model en què es basa Internet i està format per **4 capes**, que
 
   <div style="text-align: center;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/UDP_encapsulation.svg/1600px-UDP_encapsulation.svg.png" alt="UDP encapsulation" width="421" height="auto"/>
-    <p><em>Figura 1: Encapsulació UDP. Font: Wikipedia</em></p>
+    <p><em>Figura 1: Capes TCP/IP. Font: Wikipedia</em></p>
   </div>
 
 ## **2. Les 4 capes del model TCP/IP**
