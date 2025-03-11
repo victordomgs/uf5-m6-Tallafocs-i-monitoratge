@@ -48,7 +48,7 @@ Tot i que els protocols d'encaminament dinàmic operen sobre IP, tècnicament fo
 >
 > **TCP (Transmission Control Protocol):** Protocol de transport fiable i orientat a connexió que garanteix la correcta entrega i ordre de les dades. S’utilitza en aplicacions com web (HTTP/HTTPS), correu electrònic (SMTP, IMAP, POP3) i transferències de fitxers (FTP), però pot ser menys eficient en aplicacions en temps real.
 >
-> **UDP (User Datagram Protocol):** Protocol sense connexió i no fiable, que prioritza la velocitat sobre la fiabilitat. S'utilitza en streaming de vídeo/àudio, jocs en línia, VoIP i DNS, on la latència baixa és més important que la correcció d'errors.
+> **UDP (User Datagram Protocol):** Protocol sense connexió i no fiable, que prioritza la velocitat sobre la fiabilitat. S'utilitza en streaming de vídeo/àudio, jocs en línia i VoIP, on la latència baixa és més important que la correcció d'errors.
 
 **Ports TCP i UDP**
 
