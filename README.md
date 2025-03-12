@@ -116,6 +116,7 @@ Com ve hem vist abans, un tallafocs és un sistema que analitza i supervisa els 
 
 > [!NOTE] 
 > En el context de **Linux**, aquestes regles venen definides per el que es coneix com **iptables**. Un sistema de filtrat de paquets. Les connexions d'aquest sistema es divideixen en:
+> 
 > **- INPUT:** Els paquets que arriba desde una xarxa externa.
 > 
 > **- OUTPUT:** El tràfic generat en el propi sistema i que marxa cap a les xarxes externes a l'organització.
