@@ -8,7 +8,8 @@
    - [2.4. Capa d'Aplicació (Application Layer)](#24-capa-daplicació-application-layer)
 
 [3. Seguretat perimetral](#3-seguretat-perimetral)
-   - [3.1. Tipus de tallafocs](#31-tipus-de-tallafocs)
+   - [3.1. Tallafocs](#31-tallafocs)
+        - [3.1.1. Tipus de tallafocs](#31-tallafocs)
    - [3.2. Sistema de detecció d'intrusos](#32-sistema-de-detecció-dintrusos)
    - [3.3. sistema de prevenció d'intrusos](#33-sistema-de-prevenció-dintrusos)
 
@@ -108,7 +109,26 @@ A més, és comú que el tallafoc connecti una tercera xarxa anomenada **zona de
 
 Encara que un tallafoc ben configurat millora la seguretat d’una infraestructura informàtica, no és suficient per garantir una protecció completa.
 
-### 3.1. Tipus de tallafocs
+### 3.1. Tallafocs
+
+Com ve hem vist abans, un tallafocs és un sistema que analitza i supervisa els paquets que entran i surten per les seves interfícies de xarxa, és a dir el trànsit d'informació, i els accepta o refusa en funció d'un conjunt de regles que ha definit l'administrador. 
+
+> [!NOTE] 
+> En el context de **Linux**, aquestes regles venen definides per el que es coneix com **iptables**. Un sistema de filtrat de paquets. Les connexions d'aquest sistema es divideixen en:
+> **INPUT:** Els paquets que arriba desde una xarxa externa.
+> **OUTPUT:** El tràfic generat en el propi sistema i que marxa cap a les xarxes externes a l'organització.
+> **FORWARD:** Són paquets que atravesen el tallafocs pero sobre els cuals s'han definit normes d'enrutament. En realitat, el tallafocs funciona com si fos un router.
+>   <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/ip_tables_process.png" alt="IP tables" width="520" height="auto"/>
+    <p><em>Figura 3:IP Tables. Font: Pròpia</em></p>
+  </div>
+
+
+
+Quan arriba un intent de connexió el tallafoc pot: 
+
+
+### 3.1.1. Tipus de tallafocs
 
 #### Tallafoc de capa de xarxa o de filtratge de paquets
 
@@ -149,6 +169,6 @@ La principal diferència entre un IDS (Sistema de Detecció d'Intrusions) i un I
 
   <div style="text-align: center;">
     <img src="https://cdn.prod.website-files.com/5ff66329429d880392f6cba2/623d90f1f7c8acbcd68f2095_IDS%20vs%20IPS.jpg" alt="IDS vs IPS" width="630" height="auto"/>
-    <p><em>Figura 3: IDS vs IPS. Font: Wallarm</em></p>
+    <p><em>Figura 4: IDS vs IPS. Font: Wallarm</em></p>
   </div>
  
