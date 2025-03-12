@@ -126,7 +126,7 @@ Com ve hem vist abans, un tallafocs és un sistema que analitza i supervisa els 
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/ip_tables_process.png" alt="IP tables" width="520" height="auto"/>
-    <p><em>Figura 3:IP Tables. Font: Pròpia</em></p>
+    <p><em>Figura 3: IP Tables. Font: Pròpia</em></p>
   </div>
 
 Quan arriba un intent de connexió el tallafoc pot: 
@@ -172,7 +172,7 @@ Normalment aquesta eina s'integra amb un tallafoc. El detector d'intrusos és in
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/intranet_org.png" alt="INTRANET d'una organització" width="640" height="auto"/>
-    <p><em>Figura 4:Intranet d'una organització. Font: Pròpia</em></p>
+    <p><em>Figura 4: Intranet d'una organització. Font: Pròpia</em></p>
   </div>
 
 #### Tipus d'SDI
