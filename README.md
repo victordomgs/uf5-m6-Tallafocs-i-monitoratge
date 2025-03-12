@@ -10,7 +10,7 @@
 [3. Seguretat perimetral](#3-seguretat-perimetral)
    - [3.1. Tallafocs](#31-tallafocs)
         - [3.1.1. Polítiques de seguretat dels tallafocs](#311-polítiques-de-seguretat-dels-tallafocs)
-        - [3.1.2. Tipus de tallafocs](#31-tipus-de-tallafocs)
+        - [3.1.2. Tipus de tallafocs](#312-tipus-de-tallafocs)
    - [3.2. Sistema de detecció d'intrusos](#32-sistema-de-detecció-dintrusos)
    - [3.3. sistema de prevenció d'intrusos](#33-sistema-de-prevenció-dintrusos)
 
