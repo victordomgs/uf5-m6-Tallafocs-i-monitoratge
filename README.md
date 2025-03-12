@@ -158,6 +158,11 @@ Funciona en el **nivell 4** del model TCP/IP, permetent un control més detallat
 #### Tallafoc personal
 És una solució de seguretat que es desplega en forma de programari dins d’un ordinador, filtrant tant les connexions entrants com les sortints. Aquest tipus de tallafoc ofereix protecció individualitzada, bloquejant comunicacions no autoritzades i evitant possibles intrusions des de la xarxa.
 
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/intranet_org.png" alt="INTRANET d'una organització" width="640" height="auto"/>
+    <p><em>Figura 4: Intranet d'una organització. Font: Pròpia</em></p>
+  </div>
+
 ### 3.2. El sistema de detecció d'intrusos
 
 Un **Sistema de Detecció d'Intrusos o SDI** (o **IDS** de les seves sigles en anglès Intrusion Detection System) és un programa de detecció d'accessos no autoritzats a un computador o a una xarxa.
@@ -169,11 +174,6 @@ El SDI sol tenir sensors virtuals (per exemple, un sniffer o analitzador de paqu
 El funcionament d'aquestes eines es basa en l'anàlisi detallada del tràfic de xarxa, el qual en entrar a l'analitzador és comparat amb signatures d'atacs coneguts, o comportaments sospitosos, com pot ser l'escaneix de ports, paquets malformats, etc. El SDI no només analitza què tipus de tràfic és, sinó que també revisa el contingut i el seu comportament.
 
 Normalment aquesta eina s'integra amb un tallafoc. El detector d'intrusos és incapaç de detenir els atacs per si només, excepte els quals treballen conjuntament en un dispositiu de porta d'enllaç amb funcionalitat de tallafoc, convertint-se en una eina molt poderosa, ja que s'uneix la intel·ligència del SDI i el poder de bloqueig del tallafoc, a l'ésser el punt on forçosament han de passar els paquets i poden ser bloquejats abans de penetrar a la xarxa.
-
-  <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/intranet_org.png" alt="INTRANET d'una organització" width="640" height="auto"/>
-    <p><em>Figura 4: Intranet d'una organització. Font: Pròpia</em></p>
-  </div>
 
 #### Tipus d'SDI
 
