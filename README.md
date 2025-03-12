@@ -117,7 +117,9 @@ Com ve hem vist abans, un tallafocs és un sistema que analitza i supervisa els 
 > [!NOTE] 
 > En el context de **Linux**, aquestes regles venen definides per el que es coneix com **iptables**. Un sistema de filtrat de paquets. Les connexions d'aquest sistema es divideixen en:
 > **- INPUT:** Els paquets que arriba desde una xarxa externa.
+> 
 > **- OUTPUT:** El tràfic generat en el propi sistema i que marxa cap a les xarxes externes a l'organització.
+> 
 > **- FORWARD:** Són paquets que atravesen el tallafocs pero sobre els cuals s'han definit normes d'enrutament. En realitat, el tallafocs funciona com si fos un router.
 
 
@@ -129,7 +131,9 @@ Com ve hem vist abans, un tallafocs és un sistema que analitza i supervisa els 
 Quan arriba un intent de connexió el tallafoc pot: 
 
 **- Permetre (ACCEPT):** Accepta la connexió.
+
 **- Denegar (DENY):** Rebutja la connexió.
+
 **- Ignorar (DROP):** Ignora la petició de connexió (l'origen que demana la connexió no sap si ha estat ignorada o el destinatari no respon).
 
 ### 3.1.1. Polítiques de seguretat dels tallafocs
