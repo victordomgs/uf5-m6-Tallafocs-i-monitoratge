@@ -115,20 +115,30 @@ Com ve hem vist abans, un tallafocs és un sistema que analitza i supervisa els 
 
 > [!NOTE] 
 > En el context de **Linux**, aquestes regles venen definides per el que es coneix com **iptables**. Un sistema de filtrat de paquets. Les connexions d'aquest sistema es divideixen en:
-> **INPUT:** Els paquets que arriba desde una xarxa externa.
-> **OUTPUT:** El tràfic generat en el propi sistema i que marxa cap a les xarxes externes a l'organització.
-> **FORWARD:** Són paquets que atravesen el tallafocs pero sobre els cuals s'han definit normes d'enrutament. En realitat, el tallafocs funciona com si fos un router.
->   <div style="text-align: center;">
+> **- INPUT:** Els paquets que arriba desde una xarxa externa.
+> **- OUTPUT:** El tràfic generat en el propi sistema i que marxa cap a les xarxes externes a l'organització.
+> **- FORWARD:** Són paquets que atravesen el tallafocs pero sobre els cuals s'han definit normes d'enrutament. En realitat, el tallafocs funciona com si fos un router.
+
+
+  <div style="text-align: center;">
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/ip_tables_process.png" alt="IP tables" width="520" height="auto"/>
     <p><em>Figura 3:IP Tables. Font: Pròpia</em></p>
   </div>
 
-
-
 Quan arriba un intent de connexió el tallafoc pot: 
 
+**- Permetre (ACCEPT):** Accepta la connexió.
+**- Denegar (DENY):** Rebutja la connexió.
+**- Ignorar (DROP):** Ignora la petició de connexió (l'origen que demana la connexió no sap si ha estat ignorada o el destinatari no respon).
 
-### 3.1.1. Tipus de tallafocs
+### 3.1.1. Polítiques de seguretat dels tallafocs
+
+Existeixen dos tipus de política diferents, les dues en realitat tenen el mateix objectiu i el mateix resultat si han estat correctament configurades: 
+
+**- Restrictiva:** Es rebutja tot el trànsit excepte el que està expressament permès. És la política més segura: cada servei potencialment perillós ha de ser permès explícitament. 
+**- Permissiva:** Es permet tot el trànsit excepte el que està expressament denegat. Té el risc que per defecte s'hagi permès trànsit potencialment perillós. 
+
+### 3.1.2. Tipus de tallafocs
 
 #### Tallafoc de capa de xarxa o de filtratge de paquets
 
@@ -153,6 +163,11 @@ El funcionament d'aquestes eines es basa en l'anàlisi detallada del tràfic de 
 
 Normalment aquesta eina s'integra amb un tallafoc. El detector d'intrusos és incapaç de detenir els atacs per si només, excepte els quals treballen conjuntament en un dispositiu de porta d'enllaç amb funcionalitat de tallafoc, convertint-se en una eina molt poderosa, ja que s'uneix la intel·ligència del SDI i el poder de bloqueig del tallafoc, a l'ésser el punt on forçosament han de passar els paquets i poden ser bloquejats abans de penetrar a la xarxa.
 
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/intranet_org.png" alt="INTRANET d'una organització" width="640" height="auto"/>
+    <p><em>Figura 4:Intranet d'una organització. Font: Pròpia</em></p>
+  </div>
+
 #### Tipus d'SDI
 
 Existeixen dos tipus de sistemes de detecció d'intrusos:
@@ -169,6 +184,6 @@ La principal diferència entre un IDS (Sistema de Detecció d'Intrusions) i un I
 
   <div style="text-align: center;">
     <img src="https://cdn.prod.website-files.com/5ff66329429d880392f6cba2/623d90f1f7c8acbcd68f2095_IDS%20vs%20IPS.jpg" alt="IDS vs IPS" width="630" height="auto"/>
-    <p><em>Figura 4: IDS vs IPS. Font: Wallarm</em></p>
+    <p><em>Figura 5: IDS vs IPS. Font: Wallarm</em></p>
   </div>
  
