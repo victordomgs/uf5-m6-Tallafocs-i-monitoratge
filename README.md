@@ -137,6 +137,7 @@ Quan arriba un intent de connexió el tallafoc pot:
 Existeixen dos tipus de política diferents, les dues en realitat tenen el mateix objectiu i el mateix resultat si han estat correctament configurades: 
 
 **- Restrictiva:** Es rebutja tot el trànsit excepte el que està expressament permès. És la política més segura: cada servei potencialment perillós ha de ser permès explícitament. 
+
 **- Permissiva:** Es permet tot el trànsit excepte el que està expressament denegat. Té el risc que per defecte s'hagi permès trànsit potencialment perillós. 
 
 ### 3.1.2. Tipus de tallafocs
