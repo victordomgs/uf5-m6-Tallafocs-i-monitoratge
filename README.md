@@ -17,12 +17,14 @@
 [4. Monitoratge](#4-monitoratge)
    - [4.1. Inventari](#41-inventari)
    - [4.2. SNMP](#42-SNMP)
+        - [4.2.1. Components bàsics](#421-components-bàsics)
+        - [4.2.2. Base de dades d’informació d’administració](#422-base-de-dades-dinformació-dadministració)
 
 [5. Sniffers](#5-sniffers)
    - [5.1. Wireshark](#51-wireshark)
    - [5.2. TCPDump](#52-TCPDump)
 
-## **1. Introducció a TCP/IP**
+## 1. Introducció a TCP/IP
 El model **TCP/IP** (Transmission Control Protocol / Internet Protocol) és un conjunt de protocols de comunicació que permeten la connexió i transmissió de dades entre dispositius en una xarxa, incloent Internet. Aquest model es basa en una arquitectura en capes, on cada capa té funcions específiques per garantir una comunicació eficient i fiable.
 
 TCP/IP és el model en què es basa Internet i està format per **4 capes**, que s’encarreguen de diferents aspectes de la transmissió de dades.
@@ -32,7 +34,7 @@ TCP/IP és el model en què es basa Internet i està format per **4 capes**, que
     <p><em>Figura 1: Capes TCP/IP. Font: Wikipedia</em></p>
   </div>
 
-## **2. Les 4 capes del model TCP/IP**
+## 2. Les 4 capes del model TCP/IP
 
 L'arquitectura de TCP/IP està composta per quatre capes, cadascuna agrupant diferents protocols, i es correlaciona amb els nivells del model OSI de la següent manera:
 
@@ -101,7 +103,7 @@ Encara que alguns d'aquests protocols (com **ICMP i IGMP**) tècnicament es trob
 
 La capa d'enllaç no forma part realment de la pila TCP/IP però és el mètode utilitzat per passar paquets de la capa Internet d'un dispositiu a la capa Internet d'un altre. Aquest procés pot ser controlat tant per programari com per maquinari (hardware). D'aquesta manera es realitzen funcions d'enllaç de dades tals com afegir una capçalera al paquet per preparar-lo per a la seva transmissió i enviar-lo posteriorment per un mitjà físic. D'altra banda, la capa d'enllaç s'encarrega de rebre trames de dades, extreure les capçaleres d'aquestes i entregar els paquets rebuts a la capa d'Internet.
 
-## **3. Seguretat perimetral**
+## 3. Seguretat perimetral
 
 La **seguretat perimetral informàtica** consisteix a establir un conjunt de controls de seguretat al voltant d'una estructura tecnològica, amb l'objectiu de garantir la protecció adequada davant atacs o accessos procedents d'intrusos o xarxes no confiables.
 
@@ -202,3 +204,78 @@ La principal diferència entre un IDS (Sistema de Detecció d'Intrusions) i un I
     <p><em>Figura 5: IDS vs IPS. Font: Wallarm</em></p>
   </div>
  
+## 4. Monitoratge
+El **monitoratge de servidors d'Internet** consisteix en la vigilància de tots els serveis actius que una màquina ofereix per Internet. Els serveis poden ser: web, correu electrònic, missatgeria instantània, etc.
+
+El monitoratge pot ser tant **intern** com **extern**. En el cas de l'intern, la vigilància es realitza des de la mateixa xarxa on està instal·lat el servidor. Quan el monitoratge és extern, s'utilitza una plataforma d'un proveïdor de serveis que es troba fora de la nostra xarxa (normalment és una xarxa d'equips distribuïda per tot el món). El monitoratge extern és molt més fiable, perquè és independent dels problemes que pot haver dins de la xarxa on es troba l'equip a vigilar. Una altra raó per la qual és més fiable és que els sistemes comercials compten amb sistemes compostos per servidors distribuïts per tot el món i, per tant, menys sensibles a problemes puntuals en alguna de les xarxes on es troben instal·lats. El monitoratge es pot fer al núvol.
+
+### 4.1. Sistema de prevenció d'intrusos
+Abans de començar amb un "monitoratge" més complet, farem primer una visualtizació de programari dedicat a realitzar **inventari**. Aquest inventari és molt important ja que ens permet tenir un gran recull d'informació de tots els dispositius informàtics, especialment en xarxes on el número de dispostius comença a ser elevat. Per això utilitzarem a mode d'exemple el **OCSInventory**.
+
+**Open Computer and Software Inventory Next Generation (OCS)** és un programari lliure que permet als Administradors de TI gestionar l'inventari dels seus actius informàtics. OCS-NG recull informació sobre el maquinari i programari d'equips que hi ha a la xarxa que executen el programa de client OCS ("agent d'inventari OCS"). OCS pot utilitzar-se per visualitzar l'inventari mitjançant una interfície web. A més, OCS permet instal·lar aplicacions als equips segons un determinat criteri de cerca. Té moltes opcions més com rastrejar la xarxa mitjançant IPDiscovery, o instal·lar aplicacions remotament.
+
+  <div style="text-align: center;">
+    <img src="https://ca.wikipedia.org/wiki/OCS_Inventory#/media/Fitxer:Banniere-ocs-petit.png" alt="OCS" width="152" height="auto"/>
+    <p><em>Figura 6: OCSInventory. Font: Wikipedia</em></p>
+  </div>
+
+> [!NOTE]
+> Pàgina oficial de [OCSInventory](https://ocsinventory-ng.org/).
+
+### 4.2. SNMP
+El **Protocol simple d'administració de xarxa** o **SNMP (Simple Network Management Protocol)** és un protocol de la capa d'aplicació que facilita l'intercanvi d'informació d'administració entre dispositius de xarxa. Forma part del conjunt de protocols TCP/IP. SNMP permet als administradors supervisar el funcionament de la xarxa, cercar i resoldre els seus problemes, i planificar el seu creixement.
+
+Les versions de SNMP més utilitzades són dues: SNMP versió 1 (SNMPv1) i SNMP versió 2 (SNMPv2). Les dues versions tenen característiques en comú, però SNMPv2 ofereix millores com, per exemple, operacions addicionals.
+
+SNMP disposa d'una última versió (SNMPv3) que ofereix canvis significatius en relació als seus predecessors, sobretot en aspectes de seguretat. Tot i això, no ha estat gaire acceptat per la indústria.
+
+### 4.2.1. Components bàsics
+Els dispositius administrats són supervisats i controlats utilitzant quatre comandes bàsiques SNMP: lectura, escriptura, notificació i operacions transversals.
+
+- La comanda de lectura és utilitzada per un NMS per supervisar elements de la xarxa. El NMS examina diferents variables que són mantingudes pels dispositius administrats.
+- La comanda d'escriptura és feta servir per un NMS per controlar elements de la xarxa. El NMS canvia els valors de les variables emmagatzemades dins dels dispositius administrats.
+- La comanda de notificació és feta servir pels dispositius administrats per a reportar esdeveniments de forma asíncrona a un NMS.
+- Les operacions transversals són usades pel NMS per determinar quines variables suporten dispositius administrats i per recollir seqüencialment informació de les taules de variables, com per exemple, una taula de rutes.
+
+### 4.2.2. Base de dades d’informació d’administració
+Una base de dades d'informació d'administració és una col·lecció d'informació organitzada jeràrquicament. Les MIB són accedides fent servir un protocol d'administració de xarxa, com per exemple, SNMP.
+
+Un objecte administrat és una característica específica d'un dispositiu que SNMP pot monitorejar o administrar. Cada dispositiu de xarxa (com un router, switch o computadora) té múltiples característiques que SNMP pot supervisar. 
+
+Cada un d'aquests objectes s'emmagatzemen en la base de dades (MIB).
+
+> [!NOTE]
+> Existeixen dos tipus principals d'objectes administrats:
+> 
+> 1. Objectes escalars: representen un únic valor.
+> 2. Objectes tabulars: representen múltiples valors organitzats en forma de taula.
+
+**Missatges en la comunicació SNMP:**
+
+Per a la comunicació entre l’administrador i l'agent, el protocol SNMP especifica una sèrie de missatges, entre els quals trobem:
+
+Ordres que llança el gestor sobre l'agent SNMP:
+
+- **Sol·licitud GET:** missatge enviat per l’administrador a l'agent per a recuperar un registre de dades particular en el dispositiu de xarxa. Petició d'un valor específic d'un objecte de la MIB de l'agent. Aquesta ordre és utilitzada pel gestor per monitoritzar els dispositius a gestionar.
+- **Sol·licitud GETNEXT:** missatge si es volen consultar registres de dades consecutives al missatge GET anterior, per exemple, dades en taules.
+- **Sol·licitud SET:** missatge si es volen canviar el valor d'un objecte de la MIB de l'agent, en cas que l'objecte tingui habilitada la lectura i escriptura del seu valor. Degut a la limitada seguretat de SNMP, la majoria dels objectes de la MIB només tenen accés de lectura. Amb aquesta ordre el gestor pot controlar els dispositius a gestionar.
+
+Ordres de resposta de l'agent SNMP:
+
+- **Resposta GET:** l'agent respon a la Sol·licitud GET amb missatges de Resposta GET que contenen les dades sol·licitades.
+- **SNMP trap:** missatges enviats pels agents sense ser requerits per l’administrador. Succeeix quan es produeix una cosa imprevista.
+
+Exemple de comunicació per recuperar la informació sobre la descripció hardware del dispositiu:
+
+Sol·licitud GET:
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/sol_GET.png" alt="Wireshak" width="670" height="auto"/>
+    <p><em>Figura 7: Wireshark. Font: Pròpia</em></p>
+  </div>
+
+Resposta GET:
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/res_GET.png" alt="Wireshak" width="670" height="auto"/>
+    <p><em>Figura 7: Wireshark. Font: Pròpia</em></p>
+  </div>
