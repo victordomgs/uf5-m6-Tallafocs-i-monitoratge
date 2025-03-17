@@ -215,7 +215,7 @@ Abans de començar amb un "monitoratge" més complet, farem primer una visualtiz
 **Open Computer and Software Inventory Next Generation (OCS)** és un programari lliure que permet als Administradors de TI gestionar l'inventari dels seus actius informàtics. OCS-NG recull informació sobre el maquinari i programari d'equips que hi ha a la xarxa que executen el programa de client OCS ("agent d'inventari OCS"). OCS pot utilitzar-se per visualitzar l'inventari mitjançant una interfície web. A més, OCS permet instal·lar aplicacions als equips segons un determinat criteri de cerca. Té moltes opcions més com rastrejar la xarxa mitjançant IPDiscovery, o instal·lar aplicacions remotament.
 
   <div style="text-align: center;">
-    <img src="https://ca.wikipedia.org/wiki/OCS_Inventory#/media/Fitxer:Banniere-ocs-petit.png" alt="OCS" width="152" height="auto"/>
+    <img src="https://ocsinventory-ng.org/wp-content/uploads/2022/02/banniere-ocs-without-ng-01-1-300x136.png" alt="OCS" width="152" height="auto"/>
     <p><em>Figura 6: OCSInventory. Font: Wikipedia</em></p>
   </div>
 
