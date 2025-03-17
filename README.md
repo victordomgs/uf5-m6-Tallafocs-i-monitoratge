@@ -297,7 +297,7 @@ Els analitzadors de paquets tenen diversos usos, com ara monitorar xarxes per de
 - Els paquests es poden visualitzar aplicant diversos filtres.
 - Es poden afegir plug-ins.
 
-### 5.2. TCPDump
+### 5.1.2. TCPDump
 
 **Tcpdump** és una eina que té la utilitat principal d'analitzar el tràfic que circula per la xarxa.
 
