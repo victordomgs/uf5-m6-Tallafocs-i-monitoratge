@@ -14,6 +14,14 @@
    - [3.2. Sistema de detecció d'intrusos](#32-sistema-de-detecció-dintrusos)
    - [3.3. sistema de prevenció d'intrusos](#33-sistema-de-prevenció-dintrusos)
 
+[4. Monitoratge](#4-monitoratge)
+   - [4.1. Inventari](#41-inventari)
+   - [4.2. SNMP](#42-SNMP)
+
+[5. Sniffers](#5-sniffers)
+   - [5.1. Wireshark](#51-wireshark)
+   - [5.2. TCPDump](#52-TCPDump)
+
 ## **1. Introducció a TCP/IP**
 El model **TCP/IP** (Transmission Control Protocol / Internet Protocol) és un conjunt de protocols de comunicació que permeten la connexió i transmissió de dades entre dispositius en una xarxa, incloent Internet. Aquest model es basa en una arquitectura en capes, on cada capa té funcions específiques per garantir una comunicació eficient i fiable.
 
