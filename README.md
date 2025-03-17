@@ -297,7 +297,11 @@ Els analitzadors de paquets tenen diversos usos, com ara monitorar xarxes per de
 - Els paquests es poden visualitzar aplicant diversos filtres.
 - Es poden afegir plug-ins.
 
-  <div style="text-align: center;">
-    <img src="https://ca.wikipedia.org/wiki/Wireshark#/media/Fitxer:Wireshark_icon.svg" alt="Wireshak" width="152" height="auto"/>
-    <p><em>Figura 9: Wireshark. Font: Pròpia</em></p>
-  </div>
+### 5.2. TCPDump
+
+**Tcpdump** és una eina que té la utilitat principal d'analitzar el tràfic que circula per la xarxa.
+
+**Característiques:**
+- Per depurar aplicacions que utilitzen la xarxa per comunicar.
+- Per depurar la xarxa mateixa.
+- Per capturar i llegir dades enviades per altres usuaris u ordinadors. 
