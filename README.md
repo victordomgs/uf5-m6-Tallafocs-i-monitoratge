@@ -279,3 +279,25 @@ Resposta GET:
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/res_GET.png" alt="Wireshak" width="670" height="auto"/>
     <p><em>Figura 8: Wireshark. Font: Pròpia</em></p>
   </div>
+
+## 5. Sniffers
+
+Un **analitzador de paquets** és un programa informàtic de captura de les trames d'una xarxa d'ordinadors. És un fet comú que, per topologia de xarxa i necessitat material, el mitjà de transmissió sigui compartir per diversos ordinadors i dispositius de xarxa, fet que possibilita que un ordinador capturi les trames d'informació no li són destinades.
+
+Per aconseguir-ho, l'analitzador posa la targeta de xarxa en un estat conegut com "mode promiscu" en la capa d'enllaç de dades del qual no es descarten les trames no destinades a l'adreça MAC de la targeta, d'aquesta manera es pot capturar (sniff, “ensumar”) tot el trànsit que viatja per la xarxa.
+
+Els analitzadors de paquets tenen diversos usos, com ara monitorar xarxes per detectar errors i analitzar-los, o per enginyeria inversa en protocols de xarxa. També és habitual el seu ús per a fins maliciosos, com ara robar contrasenyes, interceptar correus electrònics, espiar converses de xat, etc.
+
+### 5.1.1. Wireshark
+
+**Wireshark** és un programari lliure i de codi obert amb la funcionalitat d'analitzador de paquets de xarxes de comunicació. Wireshark s'empra per a solucionar problemes en xarxes, desenvolupament i anàlisi de programari i tasques educatives.
+
+**Característiques:**
+- Wireshark és un programa que captura els paquests de diferents protocols.
+- Els paquests es poden visualitzar aplicant diversos filtres.
+- Es poden afegir plug-ins.
+
+  <div style="text-align: center;">
+    <img src="https://ca.wikipedia.org/wiki/Wireshark#/media/Fitxer:Wireshark_icon.svg" alt="Wireshak" width="152" height="auto"/>
+    <p><em>Figura 9: Wireshark. Font: Pròpia</em></p>
+  </div>
