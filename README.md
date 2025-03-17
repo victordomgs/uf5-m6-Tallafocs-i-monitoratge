@@ -277,5 +277,5 @@ Sol·licitud GET:
 Resposta GET:
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/res_GET.png" alt="Wireshak" width="670" height="auto"/>
-    <p><em>Figura 7: Wireshark. Font: Pròpia</em></p>
+    <p><em>Figura 8: Wireshark. Font: Pròpia</em></p>
   </div>
