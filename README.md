@@ -232,10 +232,10 @@ SNMP disposa d'una última versió (SNMPv3) que ofereix canvis significatius en 
 ### 4.2.1. Components bàsics
 Els dispositius administrats són supervisats i controlats utilitzant quatre comandes bàsiques SNMP: lectura, escriptura, notificació i operacions transversals.
 
-- La comanda de lectura és utilitzada per un NMS per supervisar elements de la xarxa. El NMS examina diferents variables que són mantingudes pels dispositius administrats.
-- La comanda d'escriptura és feta servir per un NMS per controlar elements de la xarxa. El NMS canvia els valors de les variables emmagatzemades dins dels dispositius administrats.
-- La comanda de notificació és feta servir pels dispositius administrats per a reportar esdeveniments de forma asíncrona a un NMS.
-- Les operacions transversals són usades pel NMS per determinar quines variables suporten dispositius administrats i per recollir seqüencialment informació de les taules de variables, com per exemple, una taula de rutes.
+- La **comanda de lectura** és utilitzada per un NMS per supervisar elements de la xarxa. El NMS examina diferents variables que són mantingudes pels dispositius administrats.
+- La **comanda d'escriptura** és feta servir per un NMS per controlar elements de la xarxa. El NMS canvia els valors de les variables emmagatzemades dins dels dispositius administrats.
+- La **comanda de notificació** és feta servir pels dispositius administrats per a reportar esdeveniments de forma asíncrona a un NMS.
+- Les **operacions transversals** són usades pel NMS per determinar quines variables suporten dispositius administrats i per recollir seqüencialment informació de les taules de variables, com per exemple, una taula de rutes.
 
 ### 4.2.2. Base de dades d’informació d’administració
 Una base de dades d'informació d'administració és una col·lecció d'informació organitzada jeràrquicament. Les MIB són accedides fent servir un protocol d'administració de xarxa, com per exemple, SNMP.
@@ -247,8 +247,8 @@ Cada un d'aquests objectes s'emmagatzemen en la base de dades (MIB).
 > [!NOTE]
 > Existeixen dos tipus principals d'objectes administrats:
 > 
-> 1. Objectes escalars: representen un únic valor.
-> 2. Objectes tabulars: representen múltiples valors organitzats en forma de taula.
+> **1. Objectes escalars:** representen un únic valor.
+> **2. Objectes tabulars:** representen múltiples valors organitzats en forma de taula.
 
 **Missatges en la comunicació SNMP:**
 
