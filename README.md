@@ -359,7 +359,7 @@ WPA adopta l'autentificació d'usuaris mitjançant l'ús d'un servidor, on s'emm
 
 ### 6.2.3. WPA2
 
-Una vegada finalitzat el nou estàndard 802.11i es crea el WPA2 basat en aquest. WPA es podria considerar de "migració", mentre que WPA2 és la versió certificada de l'estàndard de la IEEE.
+Una vegada finalitzat el nou estàndard 802.11i es crea el **WPA2** basat en aquest. WPA es podria considerar de "migració", mentre que WPA2 és la versió certificada de l'estàndard de la IEEE.
 
 Tant la versió 1 de WPA, com la denominada versió 2 de WPA, es basen en la transmissió de les autenticacions suportades en l'element d'informació corresponent, en el cas de WPA 1, en el tag propietari de Microsoft, i en el cas de WPA2 en el tag estàndard 802.11i RSN. Durant l'intercanvi d'informació en el procés de connexió RSN, si el client no suporta les autentificacions que especifica l'AP, serà desconnectat podent sofrir d'aquesta manera un atac de denegació de servei (DoS) específic a WPA.
 
@@ -367,7 +367,7 @@ A més, també existeix la possibilitat de capturar el "4way" handshake que s'in
 
 ### 6.2.4. WPA3
 
-WPA3 (Wi-Fi Protected Access 3), en español «Acceso Wi-Fi protegido 3», es el sucesor de WPA2[1]​[2]​ que fue anunciado en enero de 2018, por la Wi-Fi Alliance. El nuevo estándar utiliza cifrado de 128 bits en modo WPA3-Personal (192 bits en WPA3-Enterprise)[3]​ y confidencialidad de reenvío.[4]​ El estándar WPA3 también reemplaza el intercambio de claves pre-compartidas con la autenticación simultánea de iguales, lo que resulta en un intercambio inicial de claves más seguro en modo personal.
+**WPA3 (Wi-Fi Protected Access 3)**, en español «Acceso Wi-Fi protegido 3», es el sucesor de WPA2[1]​[2]​ que fue anunciado en enero de 2018, por la Wi-Fi Alliance. El nuevo estándar utiliza cifrado de 128 bits en modo WPA3-Personal (192 bits en WPA3-Enterprise)[3]​ y confidencialidad de reenvío.[4]​ El estándar WPA3 también reemplaza el intercambio de claves pre-compartidas con la autenticación simultánea de iguales, lo que resulta en un intercambio inicial de claves más seguro en modo personal.
 
 ## 6.3. Atac a les xarxes wifi
 
@@ -375,7 +375,7 @@ La majoria d'atacs es basen en el fet que alguns paquets de gestió no estan xif
 
 
 #### Atac de Suplantació de SSID
-Es tracta d'habilitar un punt d'accés amb el mateix nom (SSID) que el de la xarxa a atacar. Qualsevol usuari pot connectar-se a aquest punt d'accés "pirata" pensant que està connectat a la xarxa autèntica.
+Es tracta d'habilitar un punt d'accés amb el mateix nom (**SSID**) que el de la xarxa a atacar. Qualsevol usuari pot connectar-se a aquest punt d'accés "pirata" pensant que està connectat a la xarxa autèntica.
 Aquest és un risc en qualsevol xarxa pública. És tan fàcil com fer-ho des d'un mòbil.
 
 #### Atac de Segrest de sessió (hijacking)
@@ -392,11 +392,11 @@ Una **xarxa privada virtual, XPV** o **VPN** (de les inicials de **virtual priva
 
 Bàsicament hi ha tres arquitectures de connexió VPN:
 
-**VPN d'accés remot:** És potser el model més utilitzat actualment. Permet als usuaris connectar-se amb l'empresa des de llocs remots (oficines comercials, domicilis, hotels, avions preparats, etc.) utilitzant Internet. Una vegada autenticats tenen un nivell d'accés molt similar al que tenen en la xarxa local de l'empresa. Moltes empreses han reemplaçat amb aquesta tecnologia la seva infraestructura dial-up (mòdems i línies telefòniques).
+**VPN d'accés remot:** És potser el model més utilitzat actualment. **Permet als usuaris connectar-se amb l'empresa des de llocs remots (oficines comercials, domicilis, hotels, avions preparats, etc.) utilitzant Internet.** Una vegada autenticats tenen un nivell d'accés molt similar al que tenen en la xarxa local de l'empresa. Moltes empreses han reemplaçat amb aquesta tecnologia la seva infraestructura dial-up (mòdems i línies telefòniques).
 
-**VPN punt a punt:** Aquest esquema s'utilitza per connectar oficines remotes amb la seu central de l'organització. El servidor VPN, que posseeix un vincle permanent a Internet, accepta les connexions via Internet provinents dels llocs i estableix el túnel VPN. Els servidors de les sucursals es connecten a Internet utilitzant els serveis del seu proveïdor local d'Internet, típicament mitjançant connexions de banda ampla. Això permet eliminar els costosos vincles punt a punt tradicionals (realitzats comunament mitjançant connexions de cable físiques entre els nodes), sobretot en les comunicacions internacionals. El més comú utilitzar la tecnologia de túnel o tunneling.
+**VPN punt a punt:** Aquest esquema s'utilitza per connectar oficines remotes amb la seu central de l'organització. **El servidor VPN, que posseeix un vincle permanent a Internet, accepta les connexions via Internet provinents dels llocs i estableix el túnel VPN.** Els servidors de les sucursals es connecten a Internet utilitzant els serveis del seu proveïdor local d'Internet, típicament mitjançant connexions de banda ampla. Això permet eliminar els costosos vincles punt a punt tradicionals (realitzats comunament mitjançant connexions de cable físiques entre els nodes), sobretot en les comunicacions internacionals. El més comú utilitzar la tecnologia de túnel o tunneling.
 
-**VPN over LAN:** Aquest esquema és el menys difós però un dels més poderosos per utilitzar dins de l'empresa. És una variant del tipus "accés remot" però, en comptes d'utilitzar Internet com a mitjà de connexió, utilitza la mateixa xarxa d'àrea local (LAN) de l'empresa. Serveix per aïllar zones i serveis de la xarxa interna. Aquesta capacitat el fa molt convenient per millorar les prestacions de seguretat de les xarxes sense fils (WiFi).
+**VPN over LAN:** Aquest esquema és el menys difós però un dels més poderosos per utilitzar dins de l'empresa. **És una variant del tipus "accés remot" però, en comptes d'utilitzar Internet com a mitjà de connexió, utilitza la mateixa xarxa d'àrea local (LAN) de l'empresa.** Serveix per aïllar zones i serveis de la xarxa interna. Aquesta capacitat el fa molt convenient per millorar les prestacions de seguretat de les xarxes sense fils (WiFi).
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/vpn.PNG" alt="VPN" width="640" height="auto"/>
