@@ -9,24 +9,30 @@
 
 [3. Seguretat perimetral](#3-seguretat-perimetral)
    - [3.1. Tallafocs](#31-tallafocs)
-        - [3.1.1. Polítiques de seguretat dels tallafocs](#311-polítiques-de-seguretat-dels-tallafocs)
-        - [3.1.2. Tipus de tallafocs](#312-tipus-de-tallafocs)
+      - [3.1.1. Polítiques de seguretat dels tallafocs](#311-polítiques-de-seguretat-dels-tallafocs)
+      - [3.1.2. Tipus de tallafocs](#312-tipus-de-tallafocs)
    - [3.2. Sistema de detecció d'intrusos](#32-sistema-de-detecció-dintrusos)
    - [3.3. sistema de prevenció d'intrusos](#33-sistema-de-prevenció-dintrusos)
 
 [4. Monitoratge](#4-monitoratge)
    - [4.1. Inventari](#41-inventari)
    - [4.2. SNMP](#42-SNMP)
-        - [4.2.1. Components bàsics](#421-components-bàsics)
-        - [4.2.2. Base de dades d’informació d’administració](#422-base-de-dades-dinformació-dadministració)
+      - [4.2.1. Components bàsics](#421-components-bàsics)
+      - [4.2.2. Base de dades d’informació d’administració](#422-base-de-dades-dinformació-dadministració)
 
 [5. Sniffers](#5-sniffers)
    - [5.1. Wireshark](#51-wireshark)
    - [5.2. TCPDump](#52-TCPDump)
 
-[6. Sniffers](#5-sniffers)
-   - [5.1. Wireshark](#51-wireshark)
-   - [5.2. TCPDump](#52-TCPDump)
+[6. Seguretat en xarxes sense fils](#6-seguretat-en-xarxes-sense-fils)
+   - [6.1. Hotspots](#61-hotspots)
+   - [6.2. Protocols de seguretat wifi](#62-protocols-de-seguretat-wifi)
+      - [6.2.1. WEP](#621-wep)
+      - [6.2.2. WPA](#622-wpa)
+      - [6.2.3. WPA2](#623-wpa2)
+      - [6.2.4. WPA3](#624-wpa3)
+   - [6.3. Atac a les xarxes wifi](#63-atac-a-les-xarxes-wifi)
+   - [6.4. VPN](#64-vpn)
 
 ## 1. Introducció a TCP/IP
 El model **TCP/IP** (Transmission Control Protocol / Internet Protocol) és un conjunt de protocols de comunicació que permeten la connexió i transmissió de dades entre dispositius en una xarxa, incloent Internet. Aquest model es basa en una arquitectura en capes, on cada capa té funcions específiques per garantir una comunicació eficient i fiable.
@@ -312,12 +318,87 @@ Les xarxes sense fil (en anglès wireless) són aquelles que es comuniquen per u
 En l’actualitat, les xarxes sense fils (Wi-Fi) s’han convertit en un dels mitjans de connexió més comuns tant en entorns domèstics com professionals. La seva facilitat d'ús, mobilitat i abast han contribuït a la seva popularitat. Tot i això, aquestes xarxes també presenten vulnerabilitats específiques que les fan especialment atractives per a possibles atacants.
 
 La seguretat en les xarxes Wi-Fi és fonamental perquè, a diferència de les xarxes cablejades, les dades es transmeten per l’aire i poden ser interceptades fàcilment si no estan protegides correctament. És per això que cal conèixer els mecanismes que permeten xifrar les dades, autenticar els usuaris i evitar accessos no autoritzats.
-**Característiques:**
-- Per depurar aplicacions que utilitzen la xarxa per comunicar.
-- Per depurar la xarxa mateixa.
-- Per capturar i llegir dades enviades per altres usuaris u ordinadors. 
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/Wifi_certified_logo.png" alt="Wifi" width="180" height="auto"/>
     <p><em>Figura 9: Wifi certified logo. Font: Wikipedia</em></p>
+  </div>
+
+## 6.1. Hotspots
+
+Un hotspot (literalment "punt calent" en anglès) és una zona de cobertura Wi-Fi, en el qual un punt d'accés (access point) o diversos proveeixen serveis de xarxa a través d'un proveïdor de serveis d'internet sense fils (WISP). Els hotspots es troben en llocs públics, com aeroports, biblioteques, centres de convencions, cafeteries, hotels, etcètera. Aquest servei permet mantenir-se connectat a Internet en llocs públics. Aquest servei pot brindar-se de manera gratuïta o pagant una suma que depèn del proveïdor.
+
+Els dispositius compatibles amb Wi-Fi i accés sense fils permeten connectar PDAs, ordinadors i telèfons mòbils, entre d'altres.
+
+Les xarxes públiques són enormement insegures. Encara que utilitzem connexions segures amb https hi ha mètodes que permeten adulterar aquestes connexions i conèixer el contingut de la informació malgrat estar xifrada (per exemple l'atac conegut com a **SSLStrip**).
+
+> [!IMPORTANT]
+> **En cap cas hauríem d'utilitzar aquestes xarxes per consultar dades o pàgines web amb continguts personals o confidencials, a menys que utilitzem eines com les VPN** (xarxes privades virtuals) que sí ens garanteixen una seguretat màxima.
+
+## 6.2. Protocols de seguretat wifi
+
+Un **protocol de seguretat Wi-Fi** és un conjunt de regles i tecnologies que s’utilitzen per protegir les **connexions sense fils** entre dispositius (com portàtils, mòbils, impressores…) i un punt d'accés Wi-Fi (normalment un router o AP).
+
+Aquest protocol té dues funcions principals:
+
+1. 🔐 **Xifrar les dades** que viatgen per la xarxa per evitar que qualsevol persona que estigui a prop pugui interceptar i llegir la informació.
+2. ✅ **Autenticar** els dispositius que es connecten a la xarxa per assegurar-se que només usuaris autoritzats hi tenen accés.
+
+### 6.2.1. WEP
+
+WEP, acrònim de **Wired Equivalent Privacy** o "Privadesa Equivalent a Cablejat", és el sistema de xifrat inclòs en l'estàndard IEEE 802.11 com protocol per a xarxes Wireless que permet xifrar la informació que es transmet. Proporciona un xifrat a nivell 2, basat en l'algorisme de xifrat **RC4** que utilitza claus de 64 bits (40 bits més 24 bits del vector d'iniciació IV) o de 128 bits (104 bits més 24 bits del IV).
+
+> [!NOTE]
+> L'etapa de cerca de RC4. El byte de sortida es selecciona buscant els valors deS[i] iS[j], sumant-los mòdul 256 i després utilitzant la suma com a índex enS ;S(S[i] + S[j]) s'utilitza com a byte del flux de claus K.
+
+### 6.2.2. WPA
+
+**WPA** (acrònim de Wi-Fi Protected Access - 1995 - Accés Protegit Wi-Fi) és un sistema per a protegir les xarxes sense fils (Wi-Fi); creat per a corregir les deficiències del sistema previ WEP (Wired Equivalent Privacy - Privadesa Equivalent a Cablejat).
+
+WPA adopta l'autentificació d'usuaris mitjançant l'ús d'un servidor, on s'emmagatzemen les credencials i contrasenyes dels usuaris de la xarxa. Per no obligar a l'ús d'aquest servidor per al desplegament de xarxes, WPA permet l'autentificació mitjançant clau compartida (PSK, Pre-Shared Key), que d'una manera similar al WEP, requereix introduir la mateixa clau en tots els equips de la xarxa.
+
+### 6.2.3. WPA2
+
+Una vegada finalitzat el nou estàndard 802.11i es crea el WPA2 basat en aquest. WPA es podria considerar de "migració", mentre que WPA2 és la versió certificada de l'estàndard de la IEEE.
+
+Tant la versió 1 de WPA, com la denominada versió 2 de WPA, es basen en la transmissió de les autenticacions suportades en l'element d'informació corresponent, en el cas de WPA 1, en el tag propietari de Microsoft, i en el cas de WPA2 en el tag estàndard 802.11i RSN. Durant l'intercanvi d'informació en el procés de connexió RSN, si el client no suporta les autentificacions que especifica l'AP, serà desconnectat podent sofrir d'aquesta manera un atac de denegació de servei (DoS) específic a WPA.
+
+A més, també existeix la possibilitat de capturar el "4way" handshake que s'intercanvia durant el procés d'autenticació en una xarxa amb seguretat robusta. Les claus pre-compartides PSK (Pre Shared Key) són vulnerables a atacs de diccionari, però no les empresarials, ja que el servidor RADIUS generarà de manera aleatòria dites claus.
+
+### 6.2.4. WPA3
+
+WPA3 (Wi-Fi Protected Access 3), en español «Acceso Wi-Fi protegido 3», es el sucesor de WPA2[1]​[2]​ que fue anunciado en enero de 2018, por la Wi-Fi Alliance. El nuevo estándar utiliza cifrado de 128 bits en modo WPA3-Personal (192 bits en WPA3-Enterprise)[3]​ y confidencialidad de reenvío.[4]​ El estándar WPA3 también reemplaza el intercambio de claves pre-compartidas con la autenticación simultánea de iguales, lo que resulta en un intercambio inicial de claves más seguro en modo personal.
+
+## 6.3. Atac a les xarxes wifi
+
+La majoria d'atacs es basen en el fet que alguns paquets de gestió no estan xifrats i per tant són susceptibles de ser utilitzats per un atacant. Molts d'aquests atacs són molt més difícils si s'utilitzen els protocols més recents i segurs (WPA2 i posteriors).
+
+
+#### Atac de Suplantació de SSID
+Es tracta d'habilitar un punt d'accés amb el mateix nom (SSID) que el de la xarxa a atacar. Qualsevol usuari pot connectar-se a aquest punt d'accés "pirata" pensant que està connectat a la xarxa autèntica.
+Aquest és un risc en qualsevol xarxa pública. És tan fàcil com fer-ho des d'un mòbil.
+
+#### Atac de Segrest de sessió (hijacking)
+L'atacant pot capturar les credencials amb les que s'identifica i accedeix a una pàgina web i més tard pot suplantar a l'usuari víctima. Per protegir-se d'aquest atac cal assegurar-se de que s'utilitza el protocol WPA2 i navegar només a pàgines segures https.
+
+#### Atac de Denegació de servei (DoS)
+Es tracta d'inhabilitar la xarxa wifi mitjançant la injecció massiva de paquets ilegítims. 
+
+## 6.4. VPN
+
+Una **xarxa privada virtual, XPV** o **VPN** (de les inicials de **virtual private network**) és una tecnologia de xarxa que permet una extensió de la xarxa local sobre una xarxa pública o no controlada, com per exemple Internet.
+
+#### Tipus de VPN
+
+Bàsicament hi ha tres arquitectures de connexió VPN:
+
+**VPN d'accés remot:** És potser el model més utilitzat actualment. Permet als usuaris connectar-se amb l'empresa des de llocs remots (oficines comercials, domicilis, hotels, avions preparats, etc.) utilitzant Internet. Una vegada autenticats tenen un nivell d'accés molt similar al que tenen en la xarxa local de l'empresa. Moltes empreses han reemplaçat amb aquesta tecnologia la seva infraestructura dial-up (mòdems i línies telefòniques).
+
+**VPN punt a punt:** Aquest esquema s'utilitza per connectar oficines remotes amb la seu central de l'organització. El servidor VPN, que posseeix un vincle permanent a Internet, accepta les connexions via Internet provinents dels llocs i estableix el túnel VPN. Els servidors de les sucursals es connecten a Internet utilitzant els serveis del seu proveïdor local d'Internet, típicament mitjançant connexions de banda ampla. Això permet eliminar els costosos vincles punt a punt tradicionals (realitzats comunament mitjançant connexions de cable físiques entre els nodes), sobretot en les comunicacions internacionals. El més comú utilitzar la tecnologia de túnel o tunneling.
+
+**VPN over LAN:** Aquest esquema és el menys difós però un dels més poderosos per utilitzar dins de l'empresa. És una variant del tipus "accés remot" però, en comptes d'utilitzar Internet com a mitjà de connexió, utilitza la mateixa xarxa d'àrea local (LAN) de l'empresa. Serveix per aïllar zones i serveis de la xarxa interna. Aquesta capacitat el fa molt convenient per millorar les prestacions de seguretat de les xarxes sense fils (WiFi).
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/vpn.PNG" alt="VPN" width="320" height="auto"/>
+    <p><em>Figura 10: VPN. Font: Wikipedia</em></p>
   </div>
