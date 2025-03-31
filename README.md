@@ -24,6 +24,10 @@
    - [5.1. Wireshark](#51-wireshark)
    - [5.2. TCPDump](#52-TCPDump)
 
+[6. Sniffers](#5-sniffers)
+   - [5.1. Wireshark](#51-wireshark)
+   - [5.2. TCPDump](#52-TCPDump)
+
 ## 1. Introducció a TCP/IP
 El model **TCP/IP** (Transmission Control Protocol / Internet Protocol) és un conjunt de protocols de comunicació que permeten la connexió i transmissió de dades entre dispositius en una xarxa, incloent Internet. Aquest model es basa en una arquitectura en capes, on cada capa té funcions específiques per garantir una comunicació eficient i fiable.
 
@@ -301,7 +305,19 @@ Els analitzadors de paquets tenen diversos usos, com ara monitorar xarxes per de
 
 **Tcpdump** és una eina que té la utilitat principal d'analitzar el tràfic que circula per la xarxa.
 
+## 6. Seguretat en xarxes sense fils
+
+Les xarxes sense fil (en anglès wireless) són aquelles que es comuniquen per un medi de transmissió no guiat (sense cables) mitjançant ones electromagnètiques. La transmissió i la recepció es realitza a través d'antenes.
+
+En l’actualitat, les xarxes sense fils (Wi-Fi) s’han convertit en un dels mitjans de connexió més comuns tant en entorns domèstics com professionals. La seva facilitat d'ús, mobilitat i abast han contribuït a la seva popularitat. Tot i això, aquestes xarxes també presenten vulnerabilitats específiques que les fan especialment atractives per a possibles atacants.
+
+La seguretat en les xarxes Wi-Fi és fonamental perquè, a diferència de les xarxes cablejades, les dades es transmeten per l’aire i poden ser interceptades fàcilment si no estan protegides correctament. És per això que cal conèixer els mecanismes que permeten xifrar les dades, autenticar els usuaris i evitar accessos no autoritzats.
 **Característiques:**
 - Per depurar aplicacions que utilitzen la xarxa per comunicar.
 - Per depurar la xarxa mateixa.
 - Per capturar i llegir dades enviades per altres usuaris u ordinadors. 
+
+  <div style="text-align: center;">
+    <img src="https://ca.wikipedia.org/wiki/Fitxer:Wifi_certified_logo.png" alt="Wifi" width="320" height="auto"/>
+    <p><em>Figura 9: Wifi certified logo. Font: Wikipedia</em></p>
+  </div>
