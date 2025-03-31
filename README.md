@@ -318,6 +318,6 @@ La seguretat en les xarxes Wi-Fi és fonamental perquè, a diferència de les xa
 - Per capturar i llegir dades enviades per altres usuaris u ordinadors. 
 
   <div style="text-align: center;">
-    <img src="https://ca.wikipedia.org/wiki/Fitxer:Wifi_certified_logo.png" alt="Wifi" width="320" height="auto"/>
+    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/Wifi_certified_logo.png" alt="Wifi" width="180" height="auto"/>
     <p><em>Figura 9: Wifi certified logo. Font: Wikipedia</em></p>
   </div>
