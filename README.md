@@ -399,6 +399,6 @@ Bàsicament hi ha tres arquitectures de connexió VPN:
 **VPN over LAN:** Aquest esquema és el menys difós però un dels més poderosos per utilitzar dins de l'empresa. És una variant del tipus "accés remot" però, en comptes d'utilitzar Internet com a mitjà de connexió, utilitza la mateixa xarxa d'àrea local (LAN) de l'empresa. Serveix per aïllar zones i serveis de la xarxa interna. Aquesta capacitat el fa molt convenient per millorar les prestacions de seguretat de les xarxes sense fils (WiFi).
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/vpn.PNG" alt="VPN" width="320" height="auto"/>
+    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/vpn.PNG" alt="VPN" width="640" height="auto"/>
     <p><em>Figura 10: VPN. Font: Wikipedia</em></p>
   </div>
