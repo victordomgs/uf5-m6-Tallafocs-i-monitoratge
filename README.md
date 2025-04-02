@@ -313,9 +313,9 @@ Els analitzadors de paquets tenen diversos usos, com ara monitorar xarxes per de
 
 ## 6. Seguretat en xarxes sense fils
 
-Les xarxes sense fil (en anglès wireless) són aquelles que es comuniquen per un medi de transmissió no guiat (sense cables) mitjançant ones electromagnètiques. La transmissió i la recepció es realitza a través d'antenes.
+Les **xarxes sense fil (en anglès wireless)** són aquelles que es comuniquen per un medi de transmissió no guiat (sense cables) mitjançant ones electromagnètiques. La transmissió i la recepció es realitza a través d'antenes.
 
-En l’actualitat, les xarxes sense fils (Wi-Fi) s’han convertit en un dels mitjans de connexió més comuns tant en entorns domèstics com professionals. La seva facilitat d'ús, mobilitat i abast han contribuït a la seva popularitat. Tot i això, aquestes xarxes també presenten vulnerabilitats específiques que les fan especialment atractives per a possibles atacants.
+En l’actualitat, les **xarxes sense fils (Wi-Fi)** s’han convertit en un dels mitjans de connexió més comuns tant en entorns domèstics com professionals. La seva facilitat d'ús, mobilitat i abast han contribuït a la seva popularitat. Tot i això, aquestes xarxes també presenten vulnerabilitats específiques que les fan especialment atractives per a possibles atacants.
 
 La seguretat en les xarxes Wi-Fi és fonamental perquè, a diferència de les xarxes cablejades, les dades es transmeten per l’aire i poden ser interceptades fàcilment si no estan protegides correctament. És per això que cal conèixer els mecanismes que permeten xifrar les dades, autenticar els usuaris i evitar accessos no autoritzats.
 
