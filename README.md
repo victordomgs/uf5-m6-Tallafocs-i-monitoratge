@@ -348,9 +348,6 @@ Aquest protocol té dues funcions principals:
 
 WEP, acrònim de **Wired Equivalent Privacy** o "Privadesa Equivalent a Cablejat", és el sistema de xifrat inclòs en l'estàndard IEEE 802.11 com protocol per a xarxes Wireless que permet xifrar la informació que es transmet. Proporciona un xifrat a nivell 2, basat en l'algorisme de xifrat **RC4** que utilitza claus de 64 bits (40 bits més 24 bits del vector d'iniciació IV) o de 128 bits (104 bits més 24 bits del IV).
 
-> [!NOTE]
-> L'etapa de cerca de RC4. El byte de sortida es selecciona buscant els valors deS[i] iS[j], sumant-los mòdul 256 i després utilitzant la suma com a índex enS ;S(S[i] + S[j]) s'utilitza com a byte del flux de claus K.
-
 ### 6.2.2. WPA
 
 **WPA** (acrònim de Wi-Fi Protected Access - 1995 - Accés Protegit Wi-Fi) és un sistema per a protegir les xarxes sense fils (Wi-Fi); creat per a corregir les deficiències del sistema previ WEP (Wired Equivalent Privacy - Privadesa Equivalent a Cablejat).
