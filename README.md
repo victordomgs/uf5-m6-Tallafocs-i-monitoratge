@@ -11,8 +11,15 @@
    - [3.1. Tallafocs](#31-tallafocs)
       - [3.1.1. Polítiques de seguretat dels tallafocs](#311-polítiques-de-seguretat-dels-tallafocs)
       - [3.1.2. Tipus de tallafocs](#312-tipus-de-tallafocs)
-   - [3.2. Sistema de detecció d'intrusos](#32-sistema-de-detecció-dintrusos)
-   - [3.3. sistema de prevenció d'intrusos](#33-sistema-de-prevenció-dintrusos)
+   - [3.2. Filtratge](#32-filtratge)
+   - [3.3. Encaminament i NAT](#33-filtratge)
+   - [3.4. Tipologies i arquitectures](#34-tipologies-i-arquitectures)
+     - [3.4.1. Screening Router](#341-screening-router)
+     - [3.4.2. Dual Homed Host](#342-dual-homed-host)
+     - [3.4.3. Screened Host](#343-screened-host)
+     - [3.4.4. Screened Subnet](#344-screened-subnet)
+   - [3.5. Sistema de detecció d'intrusos](#32-sistema-de-detecció-dintrusos)
+   - [3.6. sistema de prevenció d'intrusos](#33-sistema-de-prevenció-dintrusos)
 
 [4. Monitoratge](#4-monitoratge)
    - [4.1. Inventari](#41-inventari)
@@ -183,7 +190,119 @@ Funciona en el **nivell 4** del model TCP/IP, permetent un control més detallat
     <p><em>Figura 4: Intranet d'una organització. Font: Pròpia</em></p>
   </div>
 
-### 3.2. El sistema de detecció d'intrusos
+### 3.2. Filtratge
+
+Una de les funcions principals d'un tallafoc és el filtratge de trànsit, que es pot implementar de diferents maneres segons el **nivell de control** i **profunditat de l’anàlisi**. A continuació es descriuen els tipus principals de filtratge que pot realitzar un firewall:
+
+#### Filtratge simple de paquets (stateless packet filtering)
+
+Aquest tipus de filtratge és el més bàsic. El tallafocs analitza cada paquet de dades de forma individual, sense tenir en compte si forma part d’una connexió més gran.
+
+Per decidir si permet o bloqueja un paquet, es fixa en:
+
+- **Adreça IP d’origen** (qui envia el paquet)
+- **Adreça IP de destinació** (qui el rep)
+- **Protocol** (normalment TCP, UDP, ICMP…)
+- **Número de port d’origen i destinació** (relacionat amb els serveis: HTTP, FTP, SSH…)
+
+Aquest tipus de tallafocs funciona segons una **llista de regles** que diu quins paquets es poden deixar passar i quins s’han de rebutjar. Per exemple:
+
+- Permetre trànsit sortint al port 80 (HTTP)
+- Bloquejar tot el trànsit entrant al port 23 (Telnet)
+
+És un sistema ràpid i eficient, però amb limitacions: **no pot detectar si un paquet forma part d’una sessió legítima o és un intent d’atac**, ja que no guarda cap mena d’estat o context.
+
+#### Filtratge amb control d’estat (stateful packet filtering)
+
+Aquest mètode és més avançat. El tallafocs **manté informació sobre l’estat de les connexions** (com per exemple si una connexió TCP ja ha estat establerta). Això permet que:
+
+- Es pugui identificar si un paquet forma part d’una comunicació iniciada prèviament.
+- Es bloquegin connexions no autoritzades que intenten enganyar el sistema enviant paquets falsos.
+
+Per exemple, un paquet entrant només es permetrà si és resposta d’una sol·licitud sortint que va començar des de la xarxa interna.
+
+Aquest tipus de tallafocs **és més segur** que el filtratge simple, però també més complex i amb més consum de recursos.
+
+#### Filtratge a la capa d'aplicació (Application-layer filtering)
+Aquest és el tipus més sofisticat. El tallafocs **entén els protocols de nivell aplicació** (com HTTP, FTP, DNS, etc.) i pot analitzar el contingut de les dades que s’envien o reben.
+
+Algunes funcionalitats destacades són:
+
+- Detectar intents d’injecció SQL en peticions web.
+- Bloquejar descàrregues de fitxers sospitosos o l’accés a certes URLs.
+- Analitzar correu electrònic i eliminar spam o virus.
+
+Aquests tallafocs poden funcionar com a **proxies** entre l’usuari i el servei al qual es vol accedir, intervenint activament en la comunicació.
+
+### 3.3. Encaminament i NAT
+
+Un **tallafocs** s’ubica **entre una zona de confiança (com una xarxa local)** i **una zona considerada no segura (com internet)**. Aquesta posició estratègica li permet controlar tot el tràfic que entra i surt de la xarxa protegida.
+
+#### Control del trànsit: entrades i sortides
+Els tallafocs poden aplicar regles per controlar el trànsit en dues direccions:
+
+- **Trànsit entrant** (des d'internet cap a la xarxa local): per defecte, aquest tipus de trànsit **es bloqueja**, ja que pot representar una amenaça (com atacs, intents d'accés no autoritzat...).
+
+- **Trànsit sortint** (des de la xarxa local cap a internet): normalment **es permet**, tot i que es poden establir restriccions per evitar l’ús de serveis no autoritzats o potencialment perillosos (jocs, xarxes socials, etc.).
+
+Aquesta gestió permet que el tallafocs actui com una **porta de control** entre l'interior segur i l'exterior desconegut.
+
+#### NAT i IP masquerading
+
+Un dels reptes de la comunicació entre una xarxa local i internet és que **les adreces IP locals (privades)** no són vàlides fora de la xarxa. Només les **adreces IP públiques** poden comunicar-se directament per internet.
+
+Aquí entra en joc el **NAT (Network Address Translation)**, un mecanisme que **tradueix les adreces privades a adreces públiques** i viceversa. El NAT s’integra habitualment en el mateix dispositiu que actua com a encaminador o tallafocs.
+
+Com funciona el NAT?
+
+Quan una màquina dins la xarxa local envia una petició cap a internet:
+
+1. El paquet surt amb una **adreça IP local** (per exemple, `10.0.0.5`).
+2. El NAT substitueix aquesta adreça per la **IP pública** del router (per exemple, `150.150.0.1`) i assigna un **port únic**.
+3. Quan arriba la resposta des d’internet, el NAT reconstrueix la connexió utilitzant el port per identificar a quina màquina local ha d’enviar el paquet.
+
+Aquest procés permet que múltiples dispositius dins la xarxa local comparteixin **una sola IP pública**, la qual cosa **estalvia adreces IP** (que són escasses i costoses).
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/NAT%20changes.PNG" width="640" height="auto"/>
+    <p><em>Figura 5: Canvi de NAT. Font: Pròpia</em></p>
+  </div>
+
+##### IP masquerading
+
+L’**IP masquerading** és una forma específica de NAT, sovint utilitzada en xarxes domèstiques o petites empreses. Consisteix en **emmascarar totes les connexions** sortints com si provenissin d’una sola adreça pública.
+
+Això significa que, per a un servidor d’internet extern, **totes les connexions semblen venir de la mateixa màquina** (l’encaminador o tallafocs), tot i que en realitat han estat generades per diferents dispositius de la xarxa local.
+
+### 3.4. El sistema de detecció d'intrusos
+
+Per classificar el tipus de firewall ho podríem fer tenint en compte la capacitat de tractar el tràfic i la flexibilitat i facilitat de configuració que tenen. Una classificació possible podria ser per la **ubicació** en la qual es trobi el firewall:
+
+- **Firewalls basats en servidors:** consta d'una aplicació de firewall que s'instal·la i executa en un sistema operatiu de xarxa (NOS), que normalment ofereix una serie de serveis com enrutament, proxy, DNS, DHCP, etc.
+
+- **Firewalls dedicats:** són equips que tenen instal·lats una aplicació específica de tallafocs i, per tant, treballen de forma autònoma i exclusivament com a tallafocs.
+
+- **Firewalls integrats:** s'integren en un dispositiu H/W per oferir la funcionalitat de firewall. Com per exemple trobem commutadors (switches) o encaminadors (routers) que integren funcions de tallafocs.
+
+- **Firewalls personals:** s'instal·len en els diferents equips de la xarxa de manera que els protegeix individualment d'amenaces externes. Per exemple en un equip domèstic, el tallafocs preinstal·lat en sistemes Windows.
+
+#### 3.4.1. Screening Router
+
+Com a separador d'una xarxa privada i la xarxa pública es troba un router que realitza tasques de filtratge.
+
+#### 3.4.2. Dual Homed Host
+
+Com a separador entre dues xarxes es disposa un equip servidor que realitzarà les tasques de filtratge i encaminament mitjançant com a mínim dues targetes de xarxa, permetent una major flexibilitat en la configuració i instal·lació d'aplicacions de seguretat.
+
+#### 3.4.3. Screened Host
+
+Combina un router com equip fronterer exterior i un servidor proxy (bastió) que filtrarà i permetrà afegir xarxes de filtratge en les aplicacions més utilitzades.
+
+#### 3.4.4. Screening Subnet
+
+Mitjançant la creació d'una subxarxa intermèdia DMZ entre la xarxa externa i la xarxa privada interna, permetrà tenir dos nivells de seguretat, un una mica menor en el tallafocs més extern i un de superior nivell de seguretat en el tallafocs d'accés a la xarxa interna.
+
+### 3.5. El sistema de detecció d'intrusos
 
 Un **Sistema de Detecció d'Intrusos o SDI** (o **IDS** de les seves sigles en anglès Intrusion Detection System) és un programa de detecció d'accessos no autoritzats a un computador o a una xarxa.
 
@@ -211,7 +330,7 @@ La principal diferència entre un IDS (Sistema de Detecció d'Intrusions) i un I
 
   <div style="text-align: center;">
     <img src="https://cdn.prod.website-files.com/5ff66329429d880392f6cba2/623d90f1f7c8acbcd68f2095_IDS%20vs%20IPS.jpg" alt="IDS vs IPS" width="630" height="auto"/>
-    <p><em>Figura 5: IDS vs IPS. Font: Wallarm</em></p>
+    <p><em>Figura 6: IDS vs IPS. Font: Wallarm</em></p>
   </div>
  
 ## 4. Monitoratge
@@ -226,7 +345,7 @@ Abans de començar amb un "monitoratge" més complet, farem primer una visualtiz
 
   <div style="text-align: center;">
     <img src="https://ocsinventory-ng.org/wp-content/uploads/2022/02/banniere-ocs-without-ng-01-1-300x136.png" alt="OCS" width="152" height="auto"/>
-    <p><em>Figura 6: OCSInventory. Font: OCSInventory.</em></p>
+    <p><em>Figura 7: OCSInventory. Font: OCSInventory.</em></p>
   </div>
 
 > [!NOTE]
@@ -281,13 +400,13 @@ Sol·licitud GET:
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/sol_GET.png" alt="Wireshak" width="670" height="auto"/>
-    <p><em>Figura 7: Wireshark. Font: Pròpia</em></p>
+    <p><em>Figura 8: Wireshark. Font: Pròpia</em></p>
   </div>
 
 Resposta GET:
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/res_GET.png" alt="Wireshak" width="670" height="auto"/>
-    <p><em>Figura 8: Wireshark. Font: Pròpia</em></p>
+    <p><em>Figura 9: Wireshark. Font: Pròpia</em></p>
   </div>
 
 ## 5. Sniffers
@@ -321,7 +440,7 @@ La seguretat en les xarxes Wi-Fi és fonamental perquè, a diferència de les xa
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/Wifi_certified_logo.png" alt="Wifi" width="180" height="auto"/>
-    <p><em>Figura 9: Wifi certified logo. Font: Wikipedia</em></p>
+    <p><em>Figura 10: Wifi certified logo. Font: Wikipedia</em></p>
   </div>
 
 ## 6.1. Hotspots
@@ -397,5 +516,5 @@ Bàsicament hi ha tres arquitectures de connexió VPN:
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/vpn.PNG" alt="VPN" width="640" height="auto"/>
-    <p><em>Figura 10: VPN. Font: Wikipedia</em></p>
+    <p><em>Figura 11: VPN. Font: Wikipedia</em></p>
   </div>
