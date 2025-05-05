@@ -33,6 +33,7 @@ Tot i així, les taules i cadenes més utilitzades són:
   2. **postrouting**: modificació després d'encaminar (tràfic sortint i tràfic forwarded).
   3. **output**: modificar només tràfic sortint, sense tocar el tràfic forwarded.  
 
+
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/uf5-m6-Tallafocs-i-monitoratge/blob/main/images/nat_filter.PNG" alt="IPTables" width="421" height="auto"/>
     <p><em>Figura 2: Cadenes NAT i FILTER. Font: Viquipèdia</em></p>
